@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-3">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <input type="text" id="entrada">
+    <button type="button" onclick="mifuncion()">testeo de input</button>
+    <p id="p"></p>
+</body>
+<script>
+
+   // try{//este metodo es donde se va a encapsular el codigo a tratar ante un error
+    //    addalert("parametro de prueba");//esto va a generar un error ya que la funcion no existe
+    //}
+    //catch{//este metodo va a que tipo de accion se va a ejetutar cuando se produzca un error en el codigo 
+    //    document.getElementById("demo").innerHTML= "error";
+    //}
+
+    //otro ejemplo
+    function mifuncion(){
+        var mensaje, x;
+        mensaje = document.getElementById("p");
+        mensaje.innerHTML = "";
+        x = document.getElementById("entrada").value;//cuando uso el metodo value, estoy obteniendo el valor introducido en el input para almacenar por ejemplo en una variable
+        try{
+            if (x == "") throw "vacio";// el metodo throw me genera un mensaje personalizado
+            if (isNaN(x)) throw "el valor introducido es un numero";
+            x = Number(x);
+            if (x<5) throw "el numero es menor que 5";
+            else if (x>10) throw "el numero es mayor a 10";
+        }
+        catch(err){
+            mensaje.innerHTML = "error en input "+err;
+        }
+    }
+
+</script>
+</html>

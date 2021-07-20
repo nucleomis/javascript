@@ -1,0 +1,19 @@
+body
+{
+    background-color: aquamarine;
+}
+h1, h2
+{
+    text-align: center;
+}
+h1
+{
+    color:blue;
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+    font-size: xx-large;
+}
+div
+{
+    display:flexbox; text-align: center;
+}

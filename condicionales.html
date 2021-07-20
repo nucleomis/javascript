@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    var email = "ejemplo@gmail.com";
+    var email2 = "ejemplo2@gmail.com";
+
+    //if
+    if (email.search("@") && email.search(".com")){
+        var a = "correcto";
+    }
+
+    //else if
+    //else if (email.length <= email2.length){
+    //    a = "email es menor";
+    //}
+
+    //else
+    //else{
+    //    var a = "incorrecto";
+    //}
+    
+    //switch
+    dia  = new Date().getDay();
+    dias = ""
+    switch(dia){
+        case 0: dias = "lunes";
+        break;
+        case 2: dias = "martes";
+        break;
+        case 3: dias = "miercoles";
+        break;
+        case 4: dias = "jueves";
+        break;
+        case 5: dias = "viernes";
+        break;
+        case 6: dias = "sabado";
+        break;
+        default: dias = "domingo";
+        break;
+    }
+
+    document.getElementById("demo").innerHTML =  dias;
+</script>
+</html>

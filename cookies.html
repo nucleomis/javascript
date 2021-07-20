@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //almacenamos informacion de la sesion de la pc del usuario, ligada a nuestra pagina web
+    //document.cookie= "username=nucleo, expire= thu, 18 dec 2021 20:00:00 UTC, path=/";
+    
+    setCookie =(cname, cvalue,dias)=>{
+        let d= new Date();
+        d.setTime(d.getTime()+(dias*24*60*60*1000));
+        let expire = "expire="+d.toUTCString();
+        document.cookie= cname+"="+cvalue+";"+expire+";path=/";
+
+    }
+
+    getCookie=(cname)=>{
+        let name= cname+"=";
+        let decode = decodeURIComponent(document.cookie);
+        let ca = decode.split(";");
+        for (i=0; i<ca.length; i++){
+            let c = ca[i];
+            while(c.charAt(0)==" "){
+                c=c.substring(1);
+            }
+            if (c.indexOf(name)==0){
+                return c.substring(name.length, c.length)
+            }
+        }
+        return "";
+    }
+
+    checkcookie=()=>{
+        let username = getCookie("username");
+        if (username !=""){
+            alert("bienvenido al sitio de nuevo "+username);
+        }
+        else{
+            username=prompt("por favor ingrese su nombre:","");
+            if(username!=""&&username!=null){
+                setCookie("username",username,7);
+            }
+        }
+    }
+
+    document.addEventListener("load",checkcookie())
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJETO WINDOWS</title>
+</head>
+<body>
+    <H1 id="demo" style="text-align: center; color:brown"> Demo</H1>
+
+    <h3 id="hora"></h3>
+    <div>
+        <button onclick="AbrirVentana()">AbrirVentana</button>
+        <button onclick="CerrarVentana()">CerrarVentana</button>
+        <button onclick="MoverVentana()">mover ventana</button>
+        <button onclick="redimencionar()">redimencionar</button>
+        <button onclick="atras()">volver</button>
+        <button onclick="history.forward()">adelante</button>
+        <button onclick="confirmacion()">confirmacion</button>
+        <button onclick="recargar()">recargar</button>
+        <button onclick="detenerclock()">detener reloj</button>
+        <button onclick="reiniciarclock()">reiniciarclock</button>
+    </div>
+</body>
+
+<script>
+
+    AbrirVentana = () =>{
+        
+        nuevaVentana = window.open("","hola", "with-200, height-100");
+    }//primer argumento: direccion, 2do:identificador 3ro:dimenciones
+
+    CerrarVentana = ()=>{
+        nuevaVentana.close();
+    }
+
+    function MoverVentana(){
+        nuevaVentana.moveTo(800,200);//mueve la ventana: primer arg: x, segundo: y . argumentos en pixeles
+        nuevaVentana.focus();//posiciona la ventana al frente y seleccionada
+    }
+
+    redimencionar =()=>{
+        nuevaVentana.resizeTo(100,100);//redimenciona la ventana arg (x,y) argumentos en pixels
+        nuevaVentana.focus();
+    }
+
+    atras = ()=>{
+        history.back();//vuelve atras a la anteultima pagina navegada
+    }
+
+    confirmacion = () =>{
+        if (confirm("desea confirmar?")){
+            txt = "confirmaste";
+        }
+        else{
+            txt = "no confirmaste";
+        }
+
+        document.getElementById("demo").innerHTML = txt;
+    }
+
+    recargar=()=>{
+        location.reload();//recarga la pagina donde esta el focus.
+    }
+
+    reloj=()=>{
+        var r= new Date;
+
+        document.getElementById("hora").innerHTML = r.toLocaleString();
+    }
+
+    var mireloj = setInterval(reloj,1000);
+
+    detenerclock=()=>{
+        clearInterval(mireloj);//con este metodo detengo los intervalos del setInterval que se ejecuta indefinidamente
+    }
+
+    reiniciarclock=()=>{
+        setInterval(reloj,1000);
+    }
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-3">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manejo de numeros</title>
+</head>
+<body>
+    <h2 id="doc"></h2>
+</body>
+<script>
+    var x = 3.141592653589793238462643383279502884197169399;
+    //toString
+    var toString = x.toString();//convierte la variable numerica en string
+    //toExponential
+    var toExponential = x.toExponential(4);//convierte el valor en un string traducido en una coni¿otacion exponencial
+    //toFixed
+    var toFixed = x.toFixed();//redondea los valores 
+    //toPrecision
+    var toPrecision = x.toPrecision(2);//agrega precion al mostrar los decimales de un numero hasta el valor que se le pase
+    //Number
+    var numero_string = "15";
+    var suma_de_string = Number(numero_string)+15;//puede convertir un strin en un numero
+    //parseInt
+    var parseo = parseInt(x);//convierte in decimal o float en un entero o integer
+    //parseFloat
+    var numero_float = "3.141592653589793238462643383279502884197169399";
+    var parseo_float = parseFloat(numero_float);//convierte un string en un float
+
+    document.getElementById("doc").innerHTML = parseo_float;
+</script>
+</html>

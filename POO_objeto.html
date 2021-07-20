@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+    
+</body>
+
+<script>
+
+    //programacion orientada a objetos o POO
+    var Persona = {
+        nombre : "roberto",
+        apellido : "papaleo",
+        dni : 32608686,
+        NombreCompleto: function(){//esta es la forma de declarar un metodo en la clase
+           return this.nombre+" "+this.apellido;
+        }
+    }
+
+    var persona = Persona;
+
+    persona.nombre = "pepe";// aca reasignamos el valor del atributo nombre del objeto Persona instanciada en persona
+
+    document.getElementById("demo").innerHTML = Persona.NombreCompleto();
+
+</script>
+</html>

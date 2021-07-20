@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manejo de string</title>
+</head>
+<body>
+    <h1 id="doc"></h1>
+</body>
+
+<script>
+    var x = "este string es nuestra base string de trabajo";
+    //indexOf
+    var indexOf = x.indexOf("string",10);//busca la palabra en el primer parametro y muestra la posicion donde inicia, el segundo parametro indica donde empieza a buscar
+    //lastIndexOf
+    var lastIndexOf = x.lastIndexOf("string",20);//busca la ultima coincidencia
+    //search
+    var search = x.search("string")//funciona igual que indexOf pero no le podes pasar un segundo parametro
+    //slice
+    var slice = x.slice(0, 5);//toma una parte del string y lo guarda en una variable
+    //substring
+    var substring = x.substring(0,10);//funciona casi igual que slice, pero no podes volver con numero negativos como en un conjunto o lista
+    //substr
+    var substr = x.substr(0,15);//igual que substring
+    //replace
+    var replace = x.replace("string", "camion")//reemplaza una palabra por otra, usando la expresion regular /string/g reemplazamos todas las coincidencias
+    //toUpperCase
+    var toUpperCase = x.toLocaleUpperCase();//convierte todo en mayuscula
+    //toLowerCase
+    var toLowerCase = x.toLowerCase();//convierte todo en minuscula
+    //concat
+    var concat = x.concat(", perrito.")//concatena el parametro con el string
+    //trim
+    var test = "         hola             perro";
+    var trin = test.trim();//acorta los espacios
+    //charAt
+    var charAt = x.charAt(1);//toma una letra de la cadena y la guarda en una variable
+    //split
+    var string = "h,o,l,a";
+    var split = string.split(",");//convierte un string en una lista,usando un parametro como referencia
+
+    document.getElementById("doc").innerHTML= split[0];
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+</body>
+<script>
+
+    var cont = 0;
+    //for
+    for (x = 0; x<10 ; x++){
+        cont = x;
+    }
+
+    //for /in
+    var lista = ["soyuno", "soy dos", "soy tres"];
+    var agregar = new Array();
+    for (x in lista){// este metodo lo que hace es devolverme cada posicion que tiene la lista
+        agregar.push(lista[x]);
+    }
+
+    //for /of
+    for (x of lista){// este metodo recorre la lista tomando el valor literal del contenido
+        document.write(x+"<br>");
+    }
+
+    //while
+    var contador = 0;
+    while(contador<=10){
+        contador  = contador + 1;
+        document.write(contador+"<br>");
+    }
+
+    //do while
+    var contador = 0;
+
+    document.write("<h1>");
+    do{
+        contador  = contador + 1;
+        document.write(contador+",");
+    } while(contador<=10)
+    document.write("<h1>");
+
+
+
+    document.getElementById("demo").innerHTML = agregar;
+</script>
+</html>

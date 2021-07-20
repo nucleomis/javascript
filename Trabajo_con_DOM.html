@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fondo{
+            width: 500px;
+            height: 450px;
+            position: relative;
+            background: yellow;
+        }
+
+        .bola{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: blue;
+        }
+    </style>
+    
+    <title>DOM</title>
+</head>
+<body>
+    <title id="titulo"> </title>
+    <div id="container" style="background-color: aqua; margin:0px 100px;">
+        <p id="demo" style="text-align:left;"> contenido del parrafo</p>
+    </div>
+    <div id="ani">
+        <div id="fondo" class="fondo">
+            <div id="bola" class="bola"º></div>
+        </div>
+        <button id="boton7" onclick="disparar_a()"> disparar</button>
+    </div>
+    <div id="alpha"></div>
+    <div id="container-boton">
+        <button id="boton1" onclick="cambiarclorofondo()">cambiar fondo</button>
+        <button id="boton2" onclick="cambiaralineacion()"> cambiar alineacion</button>
+        <button id="boton3" onclick="animartexto()"> animar texto</button>
+        <button id="boton4" onclick="agregarboton()">crear boton</button>
+        <button id="boton5" onclick="borrarboton()"> borrar botones</button>
+        <button id="boton6" onclick="reemplazar_texto()">reemplazar texto</button>
+
+    </div>
+
+</body>
+<script>
+
+    var texto = document.getElementById("demo");
+    var contenedor = document.getElementById("container");
+
+    function cambiarclorofondo(){
+        var contenedor = document.getElementById("container");
+        if (contenedor.style.backgroundColor == "aqua"){
+            contenedor.style.backgroundColor= "red";       
+        }
+        else{
+            contenedor.style.backgroundColor="aqua";
+        }
+    }
+
+    cambiaralineacion = () => {
+        if (texto.style.textAlign == "left"){
+            texto.style.textAlign = "center";
+        }
+        else{
+            texto.style.textAlign = "left";
+        }
+    }
+    var control = 0;
+    var i = 0;
+
+    animartexto = ()=>{
+        setTimeout(//con este metodo animamos 1 sola vez por evento o clic
+            function(){//para podes agregar intervalos hay que crear otra funcion dentro de la que llamamos para que el intervalo llame a esta
+                control ++;
+                if (control<500 && texto.style.textAlign == "left"){
+                    i++;
+                    texto.style.padding = "0px "+i+"px";
+                    animartexto();
+                }
+                if (control >=500 && i!=0){
+                    control ++;
+                    i = i-1
+                    texto.style.padding = "0px "+i+"px"; 
+                    animartexto();
+                }
+                else if (i==0){
+                    texto.style.textAlign == "left";
+                    control = 0;
+                }
+            },5//este es el segundo parametro que recive la funcnion setTimeout como intervalo de tiempo
+        )
+    }
+
+    var c =document.getElementById("alpha");
+    agregarboton =() =>{
+        var p= document.createElement("button")
+        p.innerHTML="nuevo boton";
+        p.id="btn";
+        
+        c.appendChild(p);
+    }
+
+    function borrarboton(){
+        c= document.getElementById("alpha")
+        p = document.getElementById("btn");
+        c.removeChild(p);
+    }
+
+    function reemplazar_texto(){
+        var parrafo_nuevo = document.createElement("p");
+        parrafo_nuevo.innerHTML += "texto nuevo";
+        contenedor.replaceChild(parrafo_nuevo,texto);
+    }
+
+    let boton_animacion = document.getElementById("boton7");
+
+    disparar_a = () =>{
+        let bola = document.getElementById("bola");
+        let pos_lado = 0;
+        let pos_alto = 0;
+        let derecha = true;
+        let abajo = true;
+        setInterval(movimiento, 5);//con esta funcion ejecutamos el evento de manera indefinida despues del evento
+
+        function movimiento(){//para podes agregar intervalos hay que crear otra funcion dentro de la que llamamos para que el intervalo llame a esta
+            if (derecha == true){
+                pos_lado++;
+                bola.style.marginLeft= pos_lado+"px";
+                if (pos_lado==450){
+                    derecha = false;
+                }
+                if (abajo == true){
+                    pos_alto++;
+                    bola.style.marginTop= pos_alto+"px";
+                    if (pos_alto==400){
+                        abajo = false;
+                    }
+                } 
+                else{
+                    pos_alto--;
+                    bola.style.marginTop = pos_alto+"px";
+                    if (pos_alto == 0){
+                        abajo = true;
+                    } 
+                }    
+            }
+            else{
+                pos_lado--;
+                bola.style.marginLeft= pos_lado+"px";
+                if (pos_lado == 0){
+                    derecha = true;
+                }
+                if (abajo==true){
+                    pos_alto++;
+                    bola.style.marginTop = pos_alto+"px";
+                    if (pos_alto==400){
+                        abajo = false;
+                    }
+                }
+                else{
+                    pos_alto--;
+                    bola.style.marginTop= pos_alto+"px";
+                    if (pos_alto == 0){
+                        abajo = true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</html>

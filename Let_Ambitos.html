@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+</body>
+<script>
+    var auto = "aguile";
+
+    var moto = "gilera";
+    {
+        auto = "UP"// si no uso la palabra reservada let, dentro del ambito puedo cambiar de manera global a la variable
+        let moto = "corven";// con estas llaves genero un ambito y con let protejo la variable y el valor dentro del ambito
+    }
+
+    document.getElementById("demo").innerHTML = moto+" "+auto;
+</script>
+</html>

@@ -1,0 +1,306 @@
+body
+{
+    background:url(https://www.wallpapertip.com/wmimgs/88-884946_parallax-wallpaper-blue-wallpaper-iphone-hexagon.jpg) ;
+    background-size: contain;
+}
+h1
+{
+    text-align: center;
+    color : white;
+}
+h4
+{
+    text-align: center;
+    color: red;
+    font-size: x-large;
+}
+h2
+{
+    color: aliceblue;
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+    font-size: xx-large;
+}
+hr
+{
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 3px;
+}
+img
+{
+    margin-top: 8px;
+    height: 100px;
+    width: 200px;
+    border-radius: 100%;
+    border: solid 8px;
+    border-style: double;
+    border-color: black;
+    margin-left: 28%;
+}
+img.css, img.vsc, img.javascript, img.html5, img.exterior
+{
+    margin-left: 38%;
+}
+img.css:hover, img.vsc:hover,img.javascript:hover, img.html5:hover, img.exterior:hover
+{
+    animation-name: latido2;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes latido2 {
+    from{
+        height: 100px;
+        width: 200px;
+        margin-left: 38%;
+    }
+    to{
+        height: 100px;
+        width: 250px;
+        margin-left: 36%;
+    }
+}
+img:hover
+{
+    animation-name: latido;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes latido {
+    from{
+        height: 100px;
+        width: 200px;
+        margin-left: 28%;
+    }
+    to{
+        height: 100px;
+        width: 250px;
+        margin-left: 24%;
+    }
+}
+img:hover
+{
+    transition-delay: 1s;
+    background-color: black;
+}
+div.encabezado
+{
+    opacity: 0.8;
+    background-color:rgb(6, 122, 231);
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+#encabezado
+{
+    animation-duration: 2s;
+    animation-name: coloreo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes coloreo
+{
+    from
+    {
+        color: black;
+    }
+    to
+    {
+        color:white;
+    }
+}
+
+#navegador
+{
+    margin-top: 5px;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: blue;
+    border: solid 2px;
+    border-color:black;
+    border-radius: 5px;
+    block-size: auto;
+}
+#navegador ul
+    {
+    list-style-type: none;
+       text-align: center;
+    }
+#navegador li
+    {
+    display: inline;
+    text-align: center;
+    margin: 20px;
+    }
+#navegador a
+{
+    color: whitesmoke;
+}
+#navegador a:hover
+{
+    color:red;
+    text-transform: uppercase;
+}
+p
+{
+    text-align: justify;
+    font-size: large;
+}
+#pensamiento
+{
+    background-color: rgb(49, 28, 241);
+    border:solid 2px ;
+    border-color: black;
+    margin-top: 4px;
+    border-left: hidden;
+    border-right: hidden;
+}
+p.pensamiento
+{
+    text-align: justify;
+    color:white;
+}
+p.video
+{
+    font-size:
+    xx-large; color: red;
+    text-align: center;
+}
+#video
+{
+    align-items: center;
+    margin-left: 10%;
+}
+#marcoprincipal
+{
+    border-style: inset;
+    font: 1em arial, helvetica, sans-serif;
+    color: black;
+    padding: 20px;
+    border-width: 10px;
+}
+
+#skill
+{
+    border-style: inset;
+    font: 1em arial, helvetica, sans-serif;
+    color: black;
+    padding: 20px;
+    border-width: 10px;
+}
+#marco
+{
+    opacity: 0.8;
+    background-color: aliceblue;
+    border-style: inset;
+    align-items: center;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-color: black;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+#marcoprincipal
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+}
+
+div.submarc
+{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+#marcol
+{
+    opacity: 0.8;
+    background-color: aliceblue;
+    border-style: inset;
+    border-width: 5px;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-color: black;
+    border-radius: 8px;
+    margin-top: 4px;
+    height: 25em;
+}
+#titulo
+{
+    height: 80px;
+}
+#formulario p
+{
+    color: aliceblue;
+}
+#contacto
+{
+    color: aliceblue;
+    text-align: center;
+}
+div.contacto1
+{
+    margin-top: 30px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+div.contacto2
+{
+    opacity: 0.9;
+    background-color: rgb(5, 28, 155);
+    width: 276px;
+    height: 550px;
+    border-radius: 10px;
+    border:solid 2px;
+    border-color: black;
+    text-align: center;
+}
+p.etiqueta
+{
+    display: flex;
+    margin-left: 8px;
+}
+#contacto div
+{
+    border:solid 1px;
+    border-color: black;
+    margin-top: 2px;
+}
+
+legend {
+    color: aliceblue;
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+#nombre
+{
+    margin-left: 2%;
+}
+#asunto
+{
+    margin-left: 5%;
+}
+#email
+{
+    margin-left: 8%;
+}
+p.enviar
+{
+    text-align: center;
+}

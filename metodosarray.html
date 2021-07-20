@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metodos array</title>
+</head>
+<body>
+    <h2 id="doc"></h2>
+</body>
+<script>
+
+    function mifuncion(){
+        return "resultado de la funcion";
+    }
+
+    var lista = ["lamina","piedra","fuego",mifuncion(),"perro"];//forma de declarar 1
+    var lista2 = new Array("lamina","piedra",mifuncion(),"fuego","perro"); //forma de declara 2
+
+    //length
+    var l = lista.length;//obtenes la longitud del array o lista
+
+    //sort
+    var s = lista.sort();//funcnion que ordena de menor a mayor la lista
+
+    //forEach
+    var e = "";//esta es la forma de aplicar este metodo
+    lista2.forEach(mifuncion1);
+    e += ""; //la funcion forEach aplica los valores de la fucion a toda la lista
+    //esta es la forma de declara la funcion usando la mima variable a la que se aplica, en este caso "e"
+    function mifuncion1(valor){
+        e += "<li>"+valor+"</li>";
+    }
+    
+    //pop
+    pop =lista.pop();//este metodo elimina el ultimo elemento de la lista
+
+    //push
+    lista.push("gato");//este metodo agrega un elemento al final de la lista
+
+    //shift
+    lista2.shift();//este metodo elimina el primer elemento de la lista
+    //si a este metodo lo guardo en una variable, este me retorna el elemento eliminado ej:
+    var eliminado = lista2.shift();
+
+    //unshift
+    lista2.unshift("piedra");//esta funcion agrega un nuevo elemento al principio de la lista
+
+    //splice
+    lista.splice(1,0,"loquito");//este metodo agrega un valor a la lista
+    //el primer parametro es la posicion donde se va a agregar, el segundo es cuantos valores de la lista se van
+    //a borrar despues de la posicion donde se va a agregar y el tercero es el valor a agregar
+
+    //concat
+    var nueva = lista.concat(lista2);//este metodo une 2 lista en una sola
+
+    //slice
+    var nueva2 = nueva.slice(1,9);//esta funcion crea una nueva lista, en el primer parametro es la posicion que elimina solo ese elemento
+    //el segundo parametro es desde que posicion va a eliminar los elementos siguientes
+
+    
+    document.getElementById("doc").innerHTML=nueva2;//utilizo para realizar las pruebas
+
+</script>
+</html>
